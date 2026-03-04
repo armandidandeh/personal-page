@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arman Didandeh | Data & AI Leader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900" x-data="{ mobileMenu: false }">
+
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tight">Arman <span class="text-blue-600">Didandeh</span></span>
+            
+            <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
+                <a href="mailto:your-email@example.com" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Contact Me</a>
+            </div>
+
+            <button class="md:hidden" @click="mobileMenu = !mobileMenu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        
+        <div x-show="mobileMenu" class="md:hidden bg-white border-b px-4 py-4 space-y-4 shadow-lg" x-transition>
+            <a @click="mobileMenu = false" href="#about" class="block">About</a>
+            <a @click="mobileMenu = false" href="#services" class="block">Services</a>
+            <a @click="mobileMenu = false" href="#experience" class="block">Experience</a>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Architecting the Future of <span class="gradient-text">Data & AI</span>
+            </h1>
+            <p class="text-xl text-slate-600 mb-10 leading-relaxed">
+                Global VP of Data & AI Products with 15+ years of experience scaling end-to-end data platforms and driving AI-powered innovation.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://www.linkedin.com/in/arman-didandeh/" class="flex items-center justify-center gap-2 bg-slate-900 text-white px-8 py-3 rounded-xl hover:bg-slate-800 transition">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn Profile
+                </a>
+                <a href="#services" class="flex items-center justify-center gap-2 border border-slate-300 px-8 py-3 rounded-xl hover:bg-slate-100 transition">
+                    View My Services
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">Core Expertise</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition">
+                    <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center text-blue-600 mb-6">
+                        <i data-lucide="brain-circuit"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI & ML Strategy</h3>
+                    <p class="text-slate-600">Designing and scaling end-to-end data platforms and deploying AI/ML solutions that deliver business impact.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition">
+                    <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center text-purple-600 mb-6">
+                        <i data-lucide="database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Data Architecture</h3>
+                    <p class="text-slate-600">Specialist in cloud data architecture, data governance, and product development across GCP, AWS, and Azure.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition">
+                    <div class="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center text-green-600 mb-6">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Product Leadership</h3>
+                    <p class="text-slate-600">Proven track record in managing global product teams and delivering net-new AI-driven MVPs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12">Professional Journey</h2>
+            <div class="space-y-12">
+                <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600"></div>
+                    <span class="text-sm font-semibold text-blue-600 uppercase">2025 - Present</span>
+                    <h3 class="text-xl font-bold mt-1">Global VP of Data & AI Products — MightyHive / Monks</h3>
+                    <p class="text-slate-600 mt-2">Managing lean global product development teams and overseeing the deployment of AI products globally.</p>
+                </div>
+                <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300"></div>
+                    <span class="text-sm font-semibold text-slate-500 uppercase">2022 - 2024</span>
+                    <h3 class="text-xl font-bold mt-1">Global Sr. Director of Data & ML Systems</h3>
+                    <p class="text-slate-600 mt-2">Enabled real-time analytics and implemented sophisticated data and AI strategies across cross-functional teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-slate-500 mb-4">© 2026 Arman Didandeh. Built for performance and impact.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.linkedin.com/in/arman-didandeh/" class="text-slate-400 hover:text-blue-600 transition"><i data-lucide="linkedin"></i></a>
+                <a href="mailto:your-email@example.com" class="text-slate-400 hover:text-blue-600 transition"><i data-lucide="mail"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
