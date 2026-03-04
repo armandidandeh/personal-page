@@ -12,6 +12,7 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .gradient-text { background: linear-gradient(90deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); }
+        .timeline-dot { @apply absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-blue-600 ring-4 ring-white; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900" x-data="{ mobileMenu: false }">
@@ -19,150 +20,152 @@
     <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <span class="text-xl font-bold tracking-tight">Arman<span class="text-blue-600">Didandeh</span></span>
-            
             <div class="hidden md:flex space-x-8 font-medium text-slate-600 items-center">
                 <a href="#about" class="hover:text-blue-600 transition">About</a>
-                <a href="#services" class="hover:text-blue-600 transition">Expertise</a>
                 <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
-                <a href="mailto:arman.didandeh@gmail.com" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition shadow-md shadow-blue-200">Get in Touch</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="mailto:arman.didandeh@gmail.com" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">Contact</a>
             </div>
-
-            <button class="md:hidden" @click="mobileMenu = !mobileMenu">
-                <i data-lucide="menu"></i>
-            </button>
-        </div>
-        
-        <div x-show="mobileMenu" x-transition class="md:hidden bg-white border-b px-6 py-6 space-y-4 shadow-xl">
-            <a @click="mobileMenu = false" href="#about" class="block text-lg">About</a>
-            <a @click="mobileMenu = false" href="#services" class="block text-lg">Expertise</a>
-            <a @click="mobileMenu = false" href="#experience" class="block text-lg">Experience</a>
-            <a href="mailto:arman.didandeh@gmail.com" class="block text-lg text-blue-600 font-bold">Contact Me</a>
+            <button class="md:hidden" @click="mobileMenu = !mobileMenu"><i data-lucide="menu"></i></button>
         </div>
     </nav>
 
     <header id="about" class="pt-40 pb-20 px-6">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <div class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-blue-600 uppercase bg-blue-50 rounded-full">
-                    PhD in Computer Science
-                </div>
-                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-                    Architecting <span class="gradient-text">Data-Driven</span> Innovation
-                </h1>
-                <p class="text-lg text-slate-600 mb-8 leading-relaxed max-w-lg">
-                    Product-focused Data & AI leader with 15+ years of experience. I bridge the gap between complex engineering and measurable business impact through scalable AI platforms.
-                </p>
+                <div class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-blue-600 uppercase bg-blue-50 rounded-full">PhD in Computer Science</div>
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">Architecting <span class="gradient-text">Data-Driven</span> Innovation</h1>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">Product-focused Data & AI leader with 15+ years of experience bridging the gap between complex engineering and measurable business impact.</p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="mailto:arman.didandeh@gmail.com" class="flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-xl hover:bg-slate-800 transition transform hover:-translate-y-1">
-                        <i data-lucide="mail" class="w-5 h-5"></i> Email Me
-                    </a>
-                    <a href="https://www.linkedin.com/in/arman-didandeh/" target="_blank" class="flex items-center gap-2 border border-slate-300 px-8 py-4 rounded-xl hover:bg-white transition transform hover:-translate-y-1">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
-                    </a>
+                    <a href="mailto:arman.didandeh@gmail.com" class="flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-xl hover:bg-slate-800 transition shadow-lg"><i data-lucide="mail"></i> Email Me</a>
+                    <a href="https://www.linkedin.com/in/arman-didandeh/" target="_blank" class="flex items-center gap-2 border border-slate-300 px-8 py-4 rounded-xl hover:bg-white transition"><i data-lucide="linkedin"></i> LinkedIn</a>
                 </div>
             </div>
             <div class="relative">
                 <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl bg-slate-200">
                     <img src="portrait.jpg" alt="Arman Didandeh" class="w-full h-full object-cover">
                 </div>
-                <div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-2xl shadow-xl hidden lg:block">
-                    <p class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-2">Current Role</p>
-                    <p class="text-lg font-bold">Global VP, Data & AI Products</p>
-                    <p class="text-blue-600 font-medium text-sm">@ MightyHive / Monks</p>
-                </div>
             </div>
         </div>
     </header>
 
-    <section id="services" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">Core Competencies</h2>
-                <div class="h-1.5 w-20 bg-blue-600 mx-auto rounded-full"></div>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-all duration-300">
-                    <div class="bg-blue-600 text-white w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-200">
-                        <i data-lucide="brain-circuit" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">GenAI & ML Systems</h3>
-                    <p class="text-slate-600 leading-relaxed">Scaling LLM applications and predictive models (OpenAI, Anthropic, Gemini, Llama) with RAG and multi-modal capabilities.</p>
-                </div>
-                <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-purple-200 transition-all duration-300">
-                    <div class="bg-purple-600 text-white w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-purple-200">
-                        <i data-lucide="layers" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Cloud Architecture</h3>
-                    <p class="text-slate-600 leading-relaxed">Designing end-to-end data platforms on GCP, AWS, and Azure using Snowflake, BigQuery, and modern ETL/ELT patterns.</p>
-                </div>
-                <div class="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:border-green-200 transition-all duration-300">
-                    <div class="bg-emerald-600 text-white w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-emerald-200">
-                        <i data-lucide="users" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Product Leadership</h3>
-                    <p class="text-slate-600 leading-relaxed">Managing global lean teams to deliver MVPs like Performance.Flow and Audience.Flow for global enterprise clients.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="py-24 bg-slate-50">
+    <section id="experience" class="py-24 bg-white">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-16 text-center">Professional Timeline</h2>
-            <div class="space-y-12">
+            <h2 class="text-3xl font-bold mb-16 text-center">Professional Journey</h2>
+            <div class="space-y-16">
+                
                 <div class="relative pl-10 border-l-2 border-slate-200">
                     <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-blue-600 ring-4 ring-white"></div>
-                    <div class="flex items-center gap-4 mb-2">
-                        <span class="text-sm font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase">2025 – Present</span>
-                    </div>
-                    <h3 class="text-2xl font-bold">Global VP of Data & AI Products</h3>
-                    <p class="text-lg font-semibold text-slate-700">MightyHive / Monks</p>
-                    <ul class="mt-4 space-y-2 text-slate-600 list-disc list-outside ml-4">
-                        <li>Directing global development for a suite of predictive and generative AI products.</li>
-                        <li>Successfully launched 3 net-new MVPs (Performance.Flow, Audience.Flow).</li>
+                    <span class="text-sm font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase">Jan 2025 – Dec 2025</span>
+                    <h3 class="text-2xl font-bold mt-4">Global VP of Data & AI Products</h3>
+                    <p class="text-lg font-semibold text-slate-700 italic">MightyHive / Monks</p>
+                    <ul class="mt-4 space-y-3 text-slate-600 list-disc ml-4">
+                        <li>Managed a lean global product development team, overseeing the lifecycle from ideation to deployment.</li>
+                        <li>Delivered 3 net-new MVPs (Performance.Flow, Audience.Flow, Social Influencer Ranking) deployed to 10+ global clients.</li>
                     </ul>
                 </div>
 
                 <div class="relative pl-10 border-l-2 border-slate-200">
-                    <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                    <div class="flex items-center gap-4 mb-2">
-                        <span class="text-sm font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full uppercase">2022 – 2024</span>
-                    </div>
-                    <h3 class="text-2xl font-bold">Global Sr. Director of Data & ML Systems</h3>
-                    <p class="text-lg font-semibold text-slate-700">MightyHive / Monks</p>
-                    <p class="mt-4 text-slate-600">Scaled cross-functional automation and data teams, enabling real-time analytics and sophisticated AI strategies for the enterprise.</p>
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-slate-400 ring-4 ring-white"></div>
+                    <span class="text-sm font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full uppercase">2021 – 2024</span>
+                    <h3 class="text-2xl font-bold mt-4">Director to Global Sr. Director, Data & ML Systems</h3>
+                    <p class="text-lg font-semibold text-slate-700 italic">MightyHive / Monks</p>
+                    <ul class="mt-4 space-y-3 text-slate-600 list-disc ml-4">
+                        <li>Defined the AI Go-To-Market (GTM) strategy and standardized cross-functional solutions for Content and Digital Media.</li>
+                        <li>Established the Canadian Data Science & Engineering team from scratch.</li>
+                        <li>Operationalized collaborative ML models and managed high-scale foundational data pipelines.</li>
+                    </ul>
+                </div>
+
+                <div class="relative pl-10 border-l-2 border-slate-200">
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-slate-400 ring-4 ring-white"></div>
+                    <span class="text-sm font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full uppercase">2021 – 2022</span>
+                    <h3 class="text-2xl font-bold mt-4">Fractional CTO</h3>
+                    <p class="text-lg font-semibold text-slate-700 italic">PredictNow.ai</p>
+                    <ul class="mt-4 space-y-3 text-slate-600 list-disc ml-4">
+                        <li>Scaled technical organization through strategic hiring and implemented engineering best practices to reduce cloud costs.</li>
+                        <li>Reduced technical debt in the core MVP to de-risk investment portfolios for B2B financial clients.</li>
+                    </ul>
+                </div>
+
+                <div class="relative pl-10 border-l-2 border-slate-200">
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-slate-400 ring-4 ring-white"></div>
+                    <span class="text-sm font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full uppercase">2017 – 2020</span>
+                    <h3 class="text-2xl font-bold mt-4">Manager / Sr. Consultant, Data Science & AI</h3>
+                    <p class="text-lg font-semibold text-slate-700 italic">Deloitte Canada (DSpace Innovation Lab)</p>
+                    <ul class="mt-4 space-y-3 text-slate-600 list-disc ml-4">
+                        <li>Deployed AI, Blockchain, and Cloud products directly into client infrastructure across Finance, Health, and PropTech.</li>
+                        <li>Built an automated retrieval system for SEC filings to support M&A and consulting workstreams.</li>
+                        <li>Mentored 12-20 researchers and co-op students quarterly in emerging tech innovation.</li>
+                    </ul>
+                </div>
+
+                <div class="relative pl-10 border-l-2 border-slate-200">
+                    <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-blue-600 ring-4 ring-white"></div>
+                    <span class="text-sm font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase">2019 – 2025</span>
+                    <h3 class="text-2xl font-bold mt-4">Strategic Product & AI Advisor</h3>
+                    <p class="text-lg font-semibold text-slate-700 italic">Various: Anthrologic, Naya Labs, FGC Health, Linggo</p>
+                    <p class="mt-2 text-slate-600 leading-relaxed">Advising startups and health-tech firms on AI roadmaps, cloud data warehousing, and fractional CTO leadership for MVP development.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center">Technical Ecosystem</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-blue-400 font-bold mb-4 uppercase tracking-wider text-sm">AI & LLMs</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li>Llama, OpenAI, Gemini</li>
+                        <li>RAG / LangChain</li>
+                        <li>VertexAI / SageMaker</li>
+                        <li>HuggingFace</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-purple-400 font-bold mb-4 uppercase tracking-wider text-sm">Data Engineering</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li>Snowflake / BigQuery</li>
+                        <li>dbt / Dataform</li>
+                        <li>Airflow / Dagster</li>
+                        <li>Spark / Databricks</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-emerald-400 font-bold mb-4 uppercase tracking-wider text-sm">Cloud & DevOps</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li>GCP / AWS / Azure</li>
+                        <li>Docker / Kubernetes</li>
+                        <li>GitHub Actions</li>
+                        <li>Terraform</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-orange-400 font-bold mb-4 uppercase tracking-wider text-sm">Languages</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li>Python / R / SQL</li>
+                        <li>C++ / Java</li>
+                        <li>Node.js</li>
+                        <li>NoSQL / GraphDB</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="py-12 bg-white overflow-hidden border-y border-slate-100">
-        <div class="flex space-x-12 animate-pulse justify-center flex-wrap opacity-50 grayscale hover:grayscale-0 transition-all">
-            <span class="font-bold text-xl uppercase tracking-tighter">GCP</span>
-            <span class="font-bold text-xl uppercase tracking-tighter">AWS</span>
-            <span class="font-bold text-xl uppercase tracking-tighter">BigQuery</span>
-            <span class="font-bold text-xl uppercase tracking-tighter">Snowflake</span>
-            <span class="font-bold text-xl uppercase tracking-tighter">VertexAI</span>
-            <span class="font-bold text-xl uppercase tracking-tighter">Databricks</span>
-            <span class="font-bold text-xl uppercase tracking-tighter">dbt</span>
-            <span class="font-bold text-xl uppercase tracking-tighter">Airflow</span>
-            <span class="font-bold text-xl uppercase tracking-tighter">LangChain</span>
-        </div>
-    </div>
-
-    <footer class="py-20 bg-slate-900 text-white">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-8">Let's solve the next data challenge together.</h2>
-            <div class="flex justify-center space-x-8 mb-12">
-                <a href="mailto:arman.didandeh@gmail.com" class="hover:text-blue-400 transition"><i data-lucide="mail" class="w-8 h-8"></i></a>
-                <a href="https://www.linkedin.com/in/arman-didandeh/" class="hover:text-blue-400 transition"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
+    <footer class="py-12 bg-white border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-slate-500">© 2026 Arman Didandeh. PhD (Computer Science)</p>
+            <div class="flex space-x-6">
+                <a href="mailto:arman.didandeh@gmail.com" class="text-slate-400 hover:text-blue-600 transition"><i data-lucide="mail"></i></a>
+                <a href="https://www.linkedin.com/in/arman-didandeh/" class="text-slate-400 hover:text-blue-600 transition"><i data-lucide="linkedin"></i></a>
             </div>
-            <p class="text-slate-500 text-sm">© 2026 Arman Didandeh. Developed with Gemini 3.1 Pro.</p>
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
